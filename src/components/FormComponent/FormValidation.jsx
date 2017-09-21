@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import AddNewAccountButton from './AddNewAccountButton.jsx';
-import errorContainer from './errorContainer.jsx';
 import SpanErrorContainer from './SpanErrorContainer.jsx';
 const axios = require('axios');
 
@@ -144,11 +143,6 @@ class NewAccount extends Component{
 			<div>
 			<section>	
 				<AddNewAccountButton clickedButton={newAccount} />	
-				<div className="container">
-					<div className="page-header">
-						<h2>Web Accounts</h2>
-					</div>
-				</div>
 			</section>
 			<section>	
 				<div className="container">					

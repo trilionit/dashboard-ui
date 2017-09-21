@@ -59,25 +59,22 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 159);
 	
-	var _index = __webpack_require__(/*! ./components/accounts/index.jsx */ 222);
-	
-	var _index2 = _interopRequireDefault(_index);
-	
-	var _newAccount = __webpack_require__(/*! ./components/accounts/newAccount.jsx */ 228);
-	
-	var _newAccount2 = _interopRequireDefault(_newAccount);
-	
-	var _DashBoard = __webpack_require__(/*! ./components/DashBoard/DashBoard.jsx */ 229);
+	var _DashBoard = __webpack_require__(/*! ./components/DashBoard/DashBoard.jsx */ 222);
 	
 	var _DashBoard2 = _interopRequireDefault(_DashBoard);
 	
-	var _index3 = __webpack_require__(/*! ./components/layout/index.jsx */ 230);
+	var _index = __webpack_require__(/*! ./components/FormComponent/index.jsx */ 232);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	var _index3 = __webpack_require__(/*! ./components/Layout/index.jsx */ 223);
 	
 	var _index4 = _interopRequireDefault(_index3);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(/*! ./css/style.css */ 238);
+	__webpack_require__(/*! ./css/style.css */ 231);
+	
 	var root = document.getElementById('root');
 	
 	_reactDom2.default.render(_react2.default.createElement(
@@ -87,8 +84,7 @@
 	    _reactRouter.Route,
 	    { path: "/", component: _index4.default },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _DashBoard2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: "Accounts", component: _index2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: "/newAccount", component: _newAccount2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: "/forms", component: _index2.default })
 	  )
 	), root);
 
@@ -26107,1098 +26103,6 @@
 
 /***/ }),
 /* 222 */
-/*!*******************************************!*\
-  !*** ./src/components/accounts/index.jsx ***!
-  \*******************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _EmailStats = __webpack_require__(/*! ./EmailStats.jsx */ 223);
-	
-	var _EmailStats2 = _interopRequireDefault(_EmailStats);
-	
-	var _AccountStats = __webpack_require__(/*! ./AccountStats.jsx */ 224);
-	
-	var _AccountStats2 = _interopRequireDefault(_AccountStats);
-	
-	var _AddNewAccountButton = __webpack_require__(/*! ./AddNewAccountButton.jsx */ 225);
-	
-	var _AddNewAccountButton2 = _interopRequireDefault(_AddNewAccountButton);
-	
-	var _ListAccounts = __webpack_require__(/*! ./ListAccounts.jsx */ 226);
-	
-	var _ListAccounts2 = _interopRequireDefault(_ListAccounts);
-	
-	var _ListEmails = __webpack_require__(/*! ./ListEmails.jsx */ 227);
-	
-	var _ListEmails2 = _interopRequireDefault(_ListEmails);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Accounts = function (_Component) {
-		_inherits(Accounts, _Component);
-	
-		function Accounts() {
-			_classCallCheck(this, Accounts);
-	
-			return _possibleConstructorReturn(this, (Accounts.__proto__ || Object.getPrototypeOf(Accounts)).apply(this, arguments));
-		}
-	
-		_createClass(Accounts, [{
-			key: 'render',
-	
-			// constructor(props){
-			// 	super(props)
-			// 	this.state={
-			// 		url:"",
-			// 		buttonName:""
-			// 	}
-			// 	//this.handleClickedButton=this.handleClickedButton.bind(this);
-			// }
-	
-	
-			value: function render() {
-				var newAccount = {
-					url: "/newAccount",
-					pageName: "New Account"
-				};
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-						'section',
-						null,
-						_react2.default.createElement(
-							'div',
-							{ className: 'container' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'page-header' },
-								_react2.default.createElement(
-									'h2',
-									null,
-									'Web Accounts'
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'quick-stats-container' },
-								_react2.default.createElement(_AccountStats2.default, null),
-								_react2.default.createElement(_EmailStats2.default, null)
-							)
-						)
-					),
-					_react2.default.createElement(
-						'section',
-						null,
-						_react2.default.createElement(_AddNewAccountButton2.default, { clickedButton: newAccount }),
-						_react2.default.createElement(
-							'div',
-							{ className: 'container' },
-							_react2.default.createElement(_ListAccounts2.default, null),
-							_react2.default.createElement(_ListEmails2.default, null)
-						)
-					)
-				);
-			}
-		}]);
-	
-		return Accounts;
-	}(_react.Component);
-	
-	exports.default = Accounts;
-
-/***/ }),
-/* 223 */
-/*!************************************************!*\
-  !*** ./src/components/accounts/EmailStats.jsx ***!
-  \************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var EmailStats = function (_Component) {
-		_inherits(EmailStats, _Component);
-	
-		function EmailStats() {
-			_classCallCheck(this, EmailStats);
-	
-			return _possibleConstructorReturn(this, (EmailStats.__proto__ || Object.getPrototypeOf(EmailStats)).apply(this, arguments));
-		}
-	
-		_createClass(EmailStats, [{
-			key: "render",
-			value: function render() {
-	
-				return _react2.default.createElement(
-					"div",
-					{ className: "grid-2" },
-					_react2.default.createElement(
-						"div",
-						{ className: "quick-container" },
-						_react2.default.createElement(
-							"div",
-							{ className: "quick-icon" },
-							_react2.default.createElement("i", { className: "fa fa-comments fa-2x" })
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "quick-text" },
-							_react2.default.createElement(
-								"div",
-								{ className: "quick-text-top" },
-								"Emails"
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "quick-text-bottom" },
-								"210"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "quick-last-update-container" },
-							_react2.default.createElement("i", { className: "fa fa-cog fa-1x" }),
-							"5 mins ago"
-						)
-					)
-				);
-			}
-		}]);
-	
-		return EmailStats;
-	}(_react.Component);
-	
-	exports.default = EmailStats;
-
-/***/ }),
-/* 224 */
-/*!**************************************************!*\
-  !*** ./src/components/accounts/AccountStats.jsx ***!
-  \**************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var AccountStats = function (_Component) {
-		_inherits(AccountStats, _Component);
-	
-		function AccountStats() {
-			_classCallCheck(this, AccountStats);
-	
-			return _possibleConstructorReturn(this, (AccountStats.__proto__ || Object.getPrototypeOf(AccountStats)).apply(this, arguments));
-		}
-	
-		_createClass(AccountStats, [{
-			key: "render",
-			value: function render() {
-	
-				return _react2.default.createElement(
-					"div",
-					{ className: "grid-2" },
-					_react2.default.createElement(
-						"div",
-						{ className: "quick-container" },
-						_react2.default.createElement(
-							"div",
-							{ className: "quick-icon" },
-							_react2.default.createElement("i", { className: "fa fa-file-text fa-2x" })
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "quick-text" },
-							_react2.default.createElement(
-								"div",
-								{ className: "quick-text-top" },
-								"Accounts"
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "quick-text-bottom" },
-								"29"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "quick-last-update-container" },
-							_react2.default.createElement("i", { className: "fa fa-cog fa-1x" }),
-							"last Updated: Aug 08, 17"
-						)
-					)
-				);
-			}
-		}]);
-	
-		return AccountStats;
-	}(_react.Component);
-	
-	exports.default = AccountStats;
-
-/***/ }),
-/* 225 */
-/*!*********************************************************!*\
-  !*** ./src/components/accounts/AddNewAccountButton.jsx ***!
-  \*********************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var AddNewAccountButton = function (_Component) {
-		_inherits(AddNewAccountButton, _Component);
-	
-		function AddNewAccountButton() {
-			_classCallCheck(this, AddNewAccountButton);
-	
-			return _possibleConstructorReturn(this, (AddNewAccountButton.__proto__ || Object.getPrototypeOf(AddNewAccountButton)).apply(this, arguments));
-		}
-	
-		_createClass(AddNewAccountButton, [{
-			key: "render",
-	
-			// constructor(props){
-			// 	super(props)
-			// 	this.state={
-			// 		url:"/newAccount",
-			// 		buttonName:"New Account"
-			// 	}
-			// }
-			// handleClickedButton(event){
-			// 	event.preventDefault();
-	
-			// 	this.setState({
-			// 		clickedButton:clickedButton
-			// 	})
-			// }
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(
-						"div",
-						{ className: "container" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid-12", align: "right" },
-							_react2.default.createElement(
-								"div",
-								{ className: "button-regular" },
-								_react2.default.createElement(
-									"a",
-									{ href: this.props.clickedButton.url },
-									this.props.clickedButton.pageName
-								)
-							)
-						)
-					)
-				);
-			}
-		}]);
-	
-		return AddNewAccountButton;
-	}(_react.Component);
-	
-	exports.default = AddNewAccountButton;
-
-/***/ }),
-/* 226 */
-/*!**************************************************!*\
-  !*** ./src/components/accounts/ListAccounts.jsx ***!
-  \**************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var ListAccounts = function (_Component) {
-		_inherits(ListAccounts, _Component);
-	
-		function ListAccounts() {
-			_classCallCheck(this, ListAccounts);
-	
-			return _possibleConstructorReturn(this, (ListAccounts.__proto__ || Object.getPrototypeOf(ListAccounts)).apply(this, arguments));
-		}
-	
-		_createClass(ListAccounts, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					{ className: "column-70" },
-					_react2.default.createElement(
-						"div",
-						{ className: "page-container-white-bg" },
-						_react2.default.createElement(
-							"div",
-							{ className: "cs-table" },
-							_react2.default.createElement(
-								"table",
-								null,
-								_react2.default.createElement(
-									"tbody",
-									null,
-									_react2.default.createElement(
-										"tr",
-										null,
-										_react2.default.createElement("th", null),
-										_react2.default.createElement(
-											"th",
-											null,
-											"Domain Name"
-										),
-										_react2.default.createElement(
-											"th",
-											null,
-											"Username"
-										),
-										_react2.default.createElement(
-											"th",
-											null,
-											"Contact Email"
-										),
-										_react2.default.createElement(
-											"th",
-											null,
-											"Setup Date"
-										),
-										_react2.default.createElement(
-											"th",
-											null,
-											"Status"
-										),
-										_react2.default.createElement("th", null)
-									),
-									_react2.default.createElement(
-										"tr",
-										{ className: "togglePlus", id: "1" },
-										_react2.default.createElement(
-											"td",
-											null,
-											_react2.default.createElement(
-												"span",
-												null,
-												_react2.default.createElement("i", { className: "fa fa-plus", id: "plus-1" })
-											)
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"designbyprince.com"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"dezyn6"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"prince@trilionit.com"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"Aug 9, 2017"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"Action"
-										),
-										_react2.default.createElement(
-											"td",
-											{ className: "icon-color" },
-											_react2.default.createElement(
-												"a",
-												{ href: "editAccount.html" },
-												_react2.default.createElement(
-													"span",
-													null,
-													_react2.default.createElement("i", { className: "fa fa-pencil" })
-												)
-											),
-											_react2.default.createElement(
-												"span",
-												null,
-												_react2.default.createElement("i", { className: "fa fa-trash" })
-											)
-										)
-									),
-									_react2.default.createElement(
-										"tr",
-										{ className: "cs-table-hidden-value", id: "toggle-1" },
-										_react2.default.createElement("td", null),
-										_react2.default.createElement(
-											"td",
-											{ colSpan: 6 },
-											_react2.default.createElement(
-												"a",
-												{ href: "package.html" },
-												"view package"
-											)
-										)
-									),
-									_react2.default.createElement(
-										"tr",
-										{ className: "togglePlus", id: "2" },
-										_react2.default.createElement(
-											"td",
-											null,
-											_react2.default.createElement(
-												"span",
-												null,
-												_react2.default.createElement("i", { className: "fa fa-plus", id: "plus-2" })
-											)
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"designbyprince.com"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"dezyn6"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"prince@trilionit.com"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"Aug 9, 2017"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"Action"
-										),
-										_react2.default.createElement(
-											"td",
-											{ className: "icon-color" },
-											_react2.default.createElement(
-												"span",
-												null,
-												_react2.default.createElement("i", { className: "fa fa-pencil" })
-											),
-											_react2.default.createElement(
-												"span",
-												null,
-												_react2.default.createElement("i", { className: "fa fa-trash" })
-											)
-										)
-									),
-									_react2.default.createElement(
-										"tr",
-										{ className: "cs-table-hidden-value", id: "toggle-2" },
-										_react2.default.createElement("td", null),
-										_react2.default.createElement(
-											"td",
-											{ colSpan: 6 },
-											"view package"
-										)
-									),
-									_react2.default.createElement(
-										"tr",
-										{ className: "togglePlus", id: "3" },
-										_react2.default.createElement(
-											"td",
-											null,
-											_react2.default.createElement(
-												"span",
-												null,
-												_react2.default.createElement("i", { className: "fa fa-plus", id: "plus-3" })
-											)
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"trilionit.com"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"dezyn6"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"prince@trilionit.com"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"Aug 9, 2017"
-										),
-										_react2.default.createElement(
-											"td",
-											null,
-											"Action"
-										),
-										_react2.default.createElement(
-											"td",
-											{ className: "icon-color" },
-											_react2.default.createElement(
-												"span",
-												null,
-												_react2.default.createElement("i", { className: "fa fa-pencil" })
-											),
-											_react2.default.createElement(
-												"span",
-												null,
-												_react2.default.createElement("i", { className: "fa fa-trash" })
-											)
-										)
-									),
-									_react2.default.createElement(
-										"tr",
-										{ className: "cs-table-hidden-value", id: "toggle-3" },
-										_react2.default.createElement("td", null),
-										_react2.default.createElement(
-											"td",
-											{ colSpan: 6 },
-											"view package"
-										)
-									)
-								)
-							)
-						)
-					)
-				);
-			}
-		}]);
-	
-		return ListAccounts;
-	}(_react.Component);
-	
-	exports.default = ListAccounts;
-
-/***/ }),
-/* 227 */
-/*!************************************************!*\
-  !*** ./src/components/accounts/ListEmails.jsx ***!
-  \************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var ListEmails = function (_Component) {
-		_inherits(ListEmails, _Component);
-	
-		function ListEmails() {
-			_classCallCheck(this, ListEmails);
-	
-			return _possibleConstructorReturn(this, (ListEmails.__proto__ || Object.getPrototypeOf(ListEmails)).apply(this, arguments));
-		}
-	
-		_createClass(ListEmails, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					{ className: "column-30" },
-					_react2.default.createElement(
-						"div",
-						{ className: "page-container-white-bg" },
-						_react2.default.createElement(
-							"div",
-							{ className: "email-container" },
-							_react2.default.createElement(
-								"div",
-								{ className: "email-user-icon-container" },
-								_react2.default.createElement(
-									"div",
-									{ className: "email-user-icon" },
-									_react2.default.createElement("i", { className: "fa fa-user fa-2x" })
-								)
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "email-text-container" },
-								_react2.default.createElement(
-									"h5",
-									null,
-									"11:20 am"
-								),
-								_react2.default.createElement(
-									"h3",
-									null,
-									"Prince Osei-Akyeampong"
-								),
-								"Domain and Hosting Registration"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "email-container" },
-							_react2.default.createElement(
-								"div",
-								{ className: "email-user-icon-container" },
-								_react2.default.createElement(
-									"div",
-									{ className: "email-user-icon" },
-									_react2.default.createElement("i", { className: "fa fa-user fa-2x" })
-								)
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "email-text-container" },
-								_react2.default.createElement(
-									"h5",
-									null,
-									"11:20 am"
-								),
-								_react2.default.createElement(
-									"h3",
-									null,
-									"Prince Osei-Akyeampong"
-								),
-								"Domain and Hosting Registration"
-							)
-						)
-					)
-				);
-			}
-		}]);
-	
-		return ListEmails;
-	}(_react.Component);
-	
-	exports.default = ListEmails;
-
-/***/ }),
-/* 228 */
-/*!************************************************!*\
-  !*** ./src/components/accounts/newAccount.jsx ***!
-  \************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _AddNewAccountButton = __webpack_require__(/*! ./AddNewAccountButton.jsx */ 225);
-	
-	var _AddNewAccountButton2 = _interopRequireDefault(_AddNewAccountButton);
-	
-	var _errorContainer = __webpack_require__(/*! ./errorContainer.jsx */ 239);
-	
-	var _errorContainer2 = _interopRequireDefault(_errorContainer);
-	
-	var _SpanErrorContainer = __webpack_require__(/*! ./SpanErrorContainer.jsx */ 240);
-	
-	var _SpanErrorContainer2 = _interopRequireDefault(_SpanErrorContainer);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var axios = __webpack_require__(/*! axios */ 241);
-	
-	var NewAccount = function (_Component) {
-		_inherits(NewAccount, _Component);
-	
-		function NewAccount(props) {
-			_classCallCheck(this, NewAccount);
-	
-			var _this = _possibleConstructorReturn(this, (NewAccount.__proto__ || Object.getPrototypeOf(NewAccount)).call(this, props));
-	
-			_this.state = {
-				domain: '',
-				userName: '',
-				password: '',
-				package: '',
-				email: '',
-				className: 'input-box',
-				domainError: '',
-				userNameError: '',
-				passwordError: '',
-				emailError: ''
-	
-			};
-			_this.handleInput = _this.handleInput.bind(_this);
-			return _this;
-		}
-	
-		_createClass(NewAccount, [{
-			key: 'handleValidation',
-			value: function handleValidation() {
-				var isError = false;
-				this.setState({
-					domainError: '',
-					userNameError: '',
-					passwordError: '',
-					emailError: ''
-				});
-	
-				if (this.state.domain.length < 6) {
-					isError = true;
-					//errors.domainError="Domain Name needs to be atleast 6 characters long";
-					this.setState({
-						className: "input-error",
-						domainError: "Domain Name needs to be atleast 6 characters long"
-					});
-				} else {
-					this.setState({
-						className: 'input-box'
-					});
-				}
-				if (this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
-					isError = true;
-					//errors.emailError="Email is Invalid";
-					this.setState({
-						className: "input-error",
-						emailError: "Email is Invalid"
-					});
-				} else {
-					this.setState({
-						className: 'input-box'
-					});
-				}
-				if (this.state.email.indexOf("@") === -1) {
-					isError = true;
-					//errors.emailError="Email is Invalid";
-					this.setState({
-						className: "input-error",
-						emailError: "Email is Invalid"
-					});
-				} else {
-					this.setState({
-						className: 'input-box'
-					});
-				}
-				if (this.state.password.length < 8) {
-					isError = true;
-					//errors.passwordError="Password needs to be atleast 8 characters long";
-					this.setState({
-						className: "input-error",
-						passwordError: "Password needs to be atleast 8 characters long"
-					});
-				} else {
-					this.setState({
-						className: 'input-box'
-					});
-				}
-				if (this.state.userName.length < 6) {
-					isError = true;
-					//errors.userNameError="Username needs to be atleast 6 characters long";
-					this.setState({
-						className: "input-error",
-						userNameError: "Username needs to be atleast 6 characters long"
-					});
-				} else {
-					this.setState({
-						className: 'input-box'
-					});
-				}
-				if (this.state.email.length < 6) {
-					isError = true;
-					//errors.emailError="Email needs to be atleast 6 characters long";
-					this.setState({
-						className: "input-error",
-						emailError: "Email needs to be atleast 6 characters long"
-					});
-				} else {
-					this.setState({
-						className: 'input-box'
-					});
-				}
-	
-				return isError;
-			}
-		}, {
-			key: 'handleInput',
-			value: function handleInput(event) {
-				event.preventDefault();
-				var name = event.target.name;
-				var value = event.target.value;
-				this.setState(_defineProperty({}, name, value));
-			}
-		}, {
-			key: 'handleSubmitForm',
-			value: function handleSubmitForm(event) {
-				event.preventDefault();
-				var err = this.handleValidation();
-				if (!err) {
-					console.log("submitted...waiting for server...");
-					axios.post('/accounts/add', this.state).then(function (response) {
-						console.log(response);
-						// this.props.setQueryResults(response.data);
-					});
-				}
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				var newAccount = {
-					url: "/accounts",
-					pageName: "Go Back"
-				};
-	
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-						'section',
-						null,
-						_react2.default.createElement(_AddNewAccountButton2.default, { clickedButton: newAccount }),
-						_react2.default.createElement(
-							'div',
-							{ className: 'container' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'page-header' },
-								_react2.default.createElement(
-									'h2',
-									null,
-									'Web Accounts'
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						'section',
-						null,
-						_react2.default.createElement(
-							'div',
-							{ className: 'container' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'form-main-container' },
-								_react2.default.createElement(
-									'div',
-									{ className: 'form-header' },
-									_react2.default.createElement(
-										'h3',
-										null,
-										'New Account'
-									)
-								),
-								_react2.default.createElement(
-									'form',
-									{ id: 'new-account', onSubmit: this.handleSubmitForm.bind(this) },
-									_react2.default.createElement(
-										'div',
-										{ className: 'form-container' },
-										_react2.default.createElement(
-											'div',
-											{ className: 'form-elements' },
-											_react2.default.createElement(
-												'label',
-												{ htmlFor: 'name' },
-												'Domain:'
-											),
-											_react2.default.createElement('input', {
-												type: 'text',
-												className: this.state.className,
-												name: 'domain',
-												onChange: this.handleInput
-	
-											}),
-											_react2.default.createElement(_SpanErrorContainer2.default, { errors: this.state.domainError }),
-											_react2.default.createElement(
-												'label',
-												{ htmlFor: 'userName' },
-												'User Name:'
-											),
-											_react2.default.createElement('input', {
-												type: 'text',
-												className: this.state.className,
-												name: 'userName',
-												onChange: this.handleInput
-											}),
-											_react2.default.createElement(_SpanErrorContainer2.default, {
-												errors: this.state.userNameError
-											}),
-											_react2.default.createElement(
-												'label',
-												{ htmlFor: 'password' },
-												'Password:'
-											),
-											_react2.default.createElement('input', {
-												type: 'password',
-												className: this.state.className,
-												name: 'password',
-												onChange: this.handleInput
-											}),
-											_react2.default.createElement(_SpanErrorContainer2.default, {
-												errors: this.state.passwordError
-											}),
-											_react2.default.createElement(
-												'label',
-												{ htmlFor: 'package' },
-												'Choose Package'
-											),
-											_react2.default.createElement(
-												'select',
-												{ name: 'package',
-													value: this.state.package
-												},
-												_react2.default.createElement(
-													'option',
-													null,
-													'Basic'
-												),
-												_react2.default.createElement(
-													'option',
-													null,
-													'Premium'
-												)
-											),
-											_react2.default.createElement(
-												'label',
-												{ htmlFor: 'email' },
-												'Contact Email:'
-											),
-											_react2.default.createElement('input', {
-												type: 'text',
-												className: this.state.className,
-												name: 'email',
-												onChange: this.handleInput
-	
-											}),
-											_react2.default.createElement(_SpanErrorContainer2.default, {
-												errors: this.state.emailError
-											}),
-											_react2.default.createElement('input', { type: 'submit', className: 'button-submit', value: 'Add Account' })
-										)
-									)
-								)
-							)
-						)
-					)
-				);
-			}
-		}]);
-	
-		return NewAccount;
-	}(_react.Component);
-	
-	exports.default = NewAccount;
-
-/***/ }),
-/* 229 */
 /*!************************************************!*\
   !*** ./src/components/DashBoard/DashBoard.jsx ***!
   \************************************************/
@@ -27267,9 +26171,9 @@
 	exports.default = DashBoard;
 
 /***/ }),
-/* 230 */
+/* 223 */
 /*!*****************************************!*\
-  !*** ./src/components/layout/index.jsx ***!
+  !*** ./src/components/Layout/index.jsx ***!
   \*****************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27285,11 +26189,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _index = __webpack_require__(/*! ./footer/index.jsx */ 231);
+	var _index = __webpack_require__(/*! ./footer/index.jsx */ 224);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
-	var _index3 = __webpack_require__(/*! ./header/index.jsx */ 232);
+	var _index3 = __webpack_require__(/*! ./header/index.jsx */ 225);
 	
 	var _index4 = _interopRequireDefault(_index3);
 	
@@ -27330,9 +26234,9 @@
 	exports.default = Layout;
 
 /***/ }),
-/* 231 */
+/* 224 */
 /*!************************************************!*\
-  !*** ./src/components/layout/footer/index.jsx ***!
+  !*** ./src/components/Layout/footer/index.jsx ***!
   \************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27420,9 +26324,9 @@
 	exports.default = Footer;
 
 /***/ }),
-/* 232 */
+/* 225 */
 /*!************************************************!*\
-  !*** ./src/components/layout/header/index.jsx ***!
+  !*** ./src/components/Layout/header/index.jsx ***!
   \************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27438,15 +26342,15 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _logoContainer = __webpack_require__(/*! ./logoContainer.jsx */ 233);
+	var _logoContainer = __webpack_require__(/*! ./logoContainer.jsx */ 226);
 	
 	var _logoContainer2 = _interopRequireDefault(_logoContainer);
 	
-	var _headerNav = __webpack_require__(/*! ./headerNav.jsx */ 234);
+	var _headerNav = __webpack_require__(/*! ./headerNav.jsx */ 227);
 	
 	var _headerNav2 = _interopRequireDefault(_headerNav);
 	
-	var _mainNav = __webpack_require__(/*! ./mainNav.jsx */ 235);
+	var _mainNav = __webpack_require__(/*! ./mainNav.jsx */ 228);
 	
 	var _mainNav2 = _interopRequireDefault(_mainNav);
 	
@@ -27494,9 +26398,9 @@
 	exports.default = TopHeader;
 
 /***/ }),
-/* 233 */
+/* 226 */
 /*!********************************************************!*\
-  !*** ./src/components/layout/header/logoContainer.jsx ***!
+  !*** ./src/components/Layout/header/logoContainer.jsx ***!
   \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27555,9 +26459,9 @@
 	exports.default = LogoContainer;
 
 /***/ }),
-/* 234 */
+/* 227 */
 /*!****************************************************!*\
-  !*** ./src/components/layout/header/headerNav.jsx ***!
+  !*** ./src/components/Layout/header/headerNav.jsx ***!
   \****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27705,9 +26609,9 @@
 	exports.default = HeaderNav;
 
 /***/ }),
-/* 235 */
+/* 228 */
 /*!**************************************************!*\
-  !*** ./src/components/layout/header/mainNav.jsx ***!
+  !*** ./src/components/Layout/header/mainNav.jsx ***!
   \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27723,11 +26627,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _navLeft = __webpack_require__(/*! ./navLeft.jsx */ 236);
+	var _navLeft = __webpack_require__(/*! ./navLeft.jsx */ 229);
 	
 	var _navLeft2 = _interopRequireDefault(_navLeft);
 	
-	var _navRight = __webpack_require__(/*! ./navRight.jsx */ 237);
+	var _navRight = __webpack_require__(/*! ./navRight.jsx */ 230);
 	
 	var _navRight2 = _interopRequireDefault(_navRight);
 	
@@ -27774,9 +26678,9 @@
 	exports.default = MainNav;
 
 /***/ }),
-/* 236 */
+/* 229 */
 /*!**************************************************!*\
-  !*** ./src/components/layout/header/navLeft.jsx ***!
+  !*** ./src/components/Layout/header/navLeft.jsx ***!
   \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27833,9 +26737,9 @@
 							null,
 							_react2.default.createElement(
 								"a",
-								{ href: "" },
-								_react2.default.createElement("i", { className: "fa fa-comments fa-1x" }),
-								" Feedback"
+								{ href: "/forms" },
+								_react2.default.createElement("i", { className: "fa fa-pencil-square-o fa-1x" }),
+								" Forms"
 							)
 						),
 						_react2.default.createElement(
@@ -27843,7 +26747,7 @@
 							null,
 							_react2.default.createElement(
 								"a",
-								{ href: "" },
+								{ href: "/gallery" },
 								_react2.default.createElement("i", { className: "fa fa-camera fa-1x" }),
 								" Gallery"
 							)
@@ -27853,9 +26757,9 @@
 							null,
 							_react2.default.createElement(
 								"a",
-								{ href: "" },
-								_react2.default.createElement("i", { className: "fa fa-money fa-1x" }),
-								" Donations"
+								{ href: "/stats" },
+								_react2.default.createElement("i", { className: "fa fa-bar-chart fa-1x" }),
+								" Stats and Charts "
 							)
 						),
 						_react2.default.createElement(
@@ -27863,7 +26767,7 @@
 							null,
 							_react2.default.createElement(
 								"a",
-								{ href: "" },
+								{ href: "/invoicing" },
 								_react2.default.createElement("i", { className: "fa fa-credit-card fa-1x" }),
 								" Invoicing"
 							)
@@ -27873,9 +26777,9 @@
 							null,
 							_react2.default.createElement(
 								"a",
-								{ href: "" },
-								_react2.default.createElement("i", { className: "fa fa-bed fa-1x", "aria-hidden": "true" }),
-								" Reservations"
+								{ href: "/login" },
+								_react2.default.createElement("i", { className: "fa fa-sign-in fa-1x", "aria-hidden": "true" }),
+								" Login Page"
 							)
 						),
 						_react2.default.createElement(
@@ -27883,9 +26787,13 @@
 							null,
 							_react2.default.createElement(
 								"a",
-								{ href: "/accounts" },
-								_react2.default.createElement("i", { className: "fa fa-address-card-o", "aria-hidden": "true" }),
-								"Accounts"
+								{ href: "/tables" },
+								_react2.default.createElement(
+									"i",
+									{ className: "fa fa-table fa-1x", "aria-hidden": "true" },
+									" "
+								),
+								"Tables"
 							)
 						)
 					)
@@ -27899,9 +26807,9 @@
 	exports.default = NavLeft;
 
 /***/ }),
-/* 237 */
+/* 230 */
 /*!***************************************************!*\
-  !*** ./src/components/layout/header/navRight.jsx ***!
+  !*** ./src/components/Layout/header/navRight.jsx ***!
   \***************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27974,7 +26882,7 @@
 	exports.default = NavRight;
 
 /***/ }),
-/* 238 */
+/* 231 */
 /*!***************************!*\
   !*** ./src/css/style.css ***!
   \***************************/
@@ -27984,10 +26892,75 @@
 	module.exports = {"container":"style__container___1KoiK","logo-container":"style__logo-container___2WfjX","header-nav":"style__header-nav___1YBpt","current-item":"style__current-item___27VCi","sub-menu":"style__sub-menu___1JQ6J","sub-menu-header":"style__sub-menu-header___3OmeS","nav-left":"style__nav-left___3FO0A","active":"style__active___1kDoI","nav-right":"style__nav-right___3dH5Y","nav":"style__nav___1cS7E","page-header":"style__page-header___1LqX-","grid-12":"style__grid-12___3ioc1","grid-2":"style__grid-2___2DhDZ","grid-3":"style__grid-3___3Cqjm","grid-4":"style__grid-4___ShjBq","column-10":"style__column-10___3AG4k","column-20":"style__column-20___IzL-h","column-30":"style__column-30___1rlCK","column-40":"style__column-40___18mEF","column-50":"style__column-50___1L_bR","column-60":"style__column-60___1yt0E","column-70":"style__column-70___1YcDq","column-80":"style__column-80___vDBxI","column-90":"style__column-90___GOk0_","quick-stats-container":"style__quick-stats-container___2WUK4","quick-container":"style__quick-container___3Q8dX","quick-icon":"style__quick-icon___1azjf","quick-text":"style__quick-text___16nIF","quick-text-top":"style__quick-text-top___318N4","quick-text-bottom":"style__quick-text-bottom___1ODrP","quick-last-update-container":"style__quick-last-update-container___sR8wl","page-container-white-bg":"style__page-container-white-bg___2IYvE","page-container-header":"style__page-container-header___2axFN","page-main-header":"style__page-main-header___w2J_M","cs-table":"style__cs-table___2oEYA","togglePlus":"style__togglePlus___aLAok","cs-table-hidden-value":"style__cs-table-hidden-value___1NEVc","icon-color":"style__icon-color___2SOcu","responsive-table":"style__responsive-table___5KPBG","table-header":"style__table-header___1q8XP","email-container":"style__email-container___VNrM-","email-user-icon-container":"style__email-user-icon-container___X6xXo","email-user-icon":"style__email-user-icon___16EQD","email-text-container":"style__email-text-container___1dhWz","buttons-container-right":"style__buttons-container-right___hOIof","button-regular":"style__button-regular___mRYnf","button-add":"style__button-add___3XOqC","button-delete":"style__button-delete___3ED6c","button-submit":"style__button-submit___Q_g5j","form-main-container":"style__form-main-container___veEVF","form-header":"style__form-header___2rtwy","form-container":"style__form-container___2GF8i","alert-container":"style__alert-container___2lzuF","alert-error":"style__alert-error___2QhIe","form-elements":"style__form-elements___1EZdv","input-box":"style__input-box___2zGEc","submit":"style__submit___AaU-t","input-error":"style__input-error___1wIm-","footer":"style__footer___3-RVa","left":"style__left___3rixz","right":"style__right___sfUg4"};
 
 /***/ }),
-/* 239 */
-/*!****************************************************!*\
-  !*** ./src/components/accounts/errorContainer.jsx ***!
-  \****************************************************/
+/* 232 */
+/*!************************************************!*\
+  !*** ./src/components/FormComponent/index.jsx ***!
+  \************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _FormValidation = __webpack_require__(/*! ./FormValidation.jsx */ 238);
+	
+	var _FormValidation2 = _interopRequireDefault(_FormValidation);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var FormComponent = function (_Component) {
+		_inherits(FormComponent, _Component);
+	
+		function FormComponent() {
+			_classCallCheck(this, FormComponent);
+	
+			return _possibleConstructorReturn(this, (FormComponent.__proto__ || Object.getPrototypeOf(FormComponent)).apply(this, arguments));
+		}
+	
+		_createClass(FormComponent, [{
+			key: 'render',
+	
+			// constructor(props){
+			// 	super(props)
+			// 	this.state={
+			// 		url:"",
+			// 		buttonName:""
+			// 	}
+			// 	//this.handleClickedButton=this.handleClickedButton.bind(this);
+			// }
+	
+	
+			value: function render() {
+				return _react2.default.createElement(_FormValidation2.default, null);
+			}
+		}]);
+	
+		return FormComponent;
+	}(_react.Component);
+	
+	exports.default = FormComponent;
+
+/***/ }),
+/* 233 */,
+/* 234 */,
+/* 235 */
+/*!**************************************************************!*\
+  !*** ./src/components/FormComponent/AddNewAccountButton.jsx ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28010,45 +26983,376 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var errorContainer = function (_Component) {
-		_inherits(errorContainer, _Component);
+	var AddNewAccountButton = function (_Component) {
+		_inherits(AddNewAccountButton, _Component);
 	
-		function errorContainer(props) {
-			_classCallCheck(this, errorContainer);
+		function AddNewAccountButton() {
+			_classCallCheck(this, AddNewAccountButton);
 	
-			return _possibleConstructorReturn(this, (errorContainer.__proto__ || Object.getPrototypeOf(errorContainer)).call(this, props));
+			return _possibleConstructorReturn(this, (AddNewAccountButton.__proto__ || Object.getPrototypeOf(AddNewAccountButton)).apply(this, arguments));
 		}
 	
-		_createClass(errorContainer, [{
+		_createClass(AddNewAccountButton, [{
 			key: "render",
+	
+			// constructor(props){
+			// 	super(props)
+			// 	this.state={
+			// 		url:"/newAccount",
+			// 		buttonName:"New Account"
+			// 	}
+			// }
+			// handleClickedButton(event){
+			// 	event.preventDefault();
+	
+			// 	this.setState({
+			// 		clickedButton:clickedButton
+			// 	})
+			// }
 			value: function render() {
-				//console.log(this.props);
-				if (this.props.formErrors[fieldName].length > 0) {
-					return _react2.default.createElement(
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
 						"div",
-						{ className: "alert-container alert-error" },
+						{ className: "container" },
 						_react2.default.createElement(
-							"strong",
-							null,
-							"Invalid !"
-						),
-						" ",
-						this.props.formErrors
-					);
-				}
+							"div",
+							{ className: "grid-12", align: "right" },
+							_react2.default.createElement(
+								"div",
+								{ className: "button-regular" },
+								_react2.default.createElement(
+									"a",
+									{ href: this.props.clickedButton.url },
+									this.props.clickedButton.pageName
+								)
+							)
+						)
+					)
+				);
 			}
 		}]);
 	
-		return errorContainer;
+		return AddNewAccountButton;
 	}(_react.Component);
 	
-	exports.default = errorContainer;
+	exports.default = AddNewAccountButton;
 
 /***/ }),
-/* 240 */
-/*!********************************************************!*\
-  !*** ./src/components/accounts/SpanErrorContainer.jsx ***!
-  \********************************************************/
+/* 236 */,
+/* 237 */,
+/* 238 */
+/*!*********************************************************!*\
+  !*** ./src/components/FormComponent/FormValidation.jsx ***!
+  \*********************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _AddNewAccountButton = __webpack_require__(/*! ./AddNewAccountButton.jsx */ 235);
+	
+	var _AddNewAccountButton2 = _interopRequireDefault(_AddNewAccountButton);
+	
+	var _SpanErrorContainer = __webpack_require__(/*! ./SpanErrorContainer.jsx */ 239);
+	
+	var _SpanErrorContainer2 = _interopRequireDefault(_SpanErrorContainer);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var axios = __webpack_require__(/*! axios */ 240);
+	
+	var NewAccount = function (_Component) {
+		_inherits(NewAccount, _Component);
+	
+		function NewAccount(props) {
+			_classCallCheck(this, NewAccount);
+	
+			var _this = _possibleConstructorReturn(this, (NewAccount.__proto__ || Object.getPrototypeOf(NewAccount)).call(this, props));
+	
+			_this.state = {
+				domain: '',
+				userName: '',
+				password: '',
+				package: '',
+				email: '',
+				className: 'input-box',
+				domainError: '',
+				userNameError: '',
+				passwordError: '',
+				emailError: ''
+	
+			};
+			_this.handleInput = _this.handleInput.bind(_this);
+			return _this;
+		}
+	
+		_createClass(NewAccount, [{
+			key: 'handleValidation',
+			value: function handleValidation() {
+				var isError = false;
+				this.setState({
+					domainError: '',
+					userNameError: '',
+					passwordError: '',
+					emailError: ''
+				});
+	
+				if (this.state.domain.length < 6) {
+					isError = true;
+					//errors.domainError="Domain Name needs to be atleast 6 characters long";
+					this.setState({
+						className: "input-error",
+						domainError: "Domain Name needs to be atleast 6 characters long"
+					});
+				} else {
+					this.setState({
+						className: 'input-box'
+					});
+				}
+				if (this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+					isError = true;
+					//errors.emailError="Email is Invalid";
+					this.setState({
+						className: "input-error",
+						emailError: "Email is Invalid"
+					});
+				} else {
+					this.setState({
+						className: 'input-box'
+					});
+				}
+				if (this.state.email.indexOf("@") === -1) {
+					isError = true;
+					//errors.emailError="Email is Invalid";
+					this.setState({
+						className: "input-error",
+						emailError: "Email is Invalid"
+					});
+				} else {
+					this.setState({
+						className: 'input-box'
+					});
+				}
+				if (this.state.password.length < 8) {
+					isError = true;
+					//errors.passwordError="Password needs to be atleast 8 characters long";
+					this.setState({
+						className: "input-error",
+						passwordError: "Password needs to be atleast 8 characters long"
+					});
+				} else {
+					this.setState({
+						className: 'input-box'
+					});
+				}
+				if (this.state.userName.length < 6) {
+					isError = true;
+					//errors.userNameError="Username needs to be atleast 6 characters long";
+					this.setState({
+						className: "input-error",
+						userNameError: "Username needs to be atleast 6 characters long"
+					});
+				} else {
+					this.setState({
+						className: 'input-box'
+					});
+				}
+				if (this.state.email.length < 6) {
+					isError = true;
+					//errors.emailError="Email needs to be atleast 6 characters long";
+					this.setState({
+						className: "input-error",
+						emailError: "Email needs to be atleast 6 characters long"
+					});
+				} else {
+					this.setState({
+						className: 'input-box'
+					});
+				}
+	
+				return isError;
+			}
+		}, {
+			key: 'handleInput',
+			value: function handleInput(event) {
+				event.preventDefault();
+				var name = event.target.name;
+				var value = event.target.value;
+				this.setState(_defineProperty({}, name, value));
+			}
+		}, {
+			key: 'handleSubmitForm',
+			value: function handleSubmitForm(event) {
+				event.preventDefault();
+				var err = this.handleValidation();
+				if (!err) {
+					console.log("submitted...waiting for server...");
+					axios.post('/accounts/add', this.state).then(function (response) {
+						console.log(response);
+						// this.props.setQueryResults(response.data);
+					});
+				}
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var newAccount = {
+					url: "/accounts",
+					pageName: "Go Back"
+				};
+	
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'section',
+						null,
+						_react2.default.createElement(_AddNewAccountButton2.default, { clickedButton: newAccount })
+					),
+					_react2.default.createElement(
+						'section',
+						null,
+						_react2.default.createElement(
+							'div',
+							{ className: 'container' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'form-main-container' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'form-header' },
+									_react2.default.createElement(
+										'h3',
+										null,
+										'New Account'
+									)
+								),
+								_react2.default.createElement(
+									'form',
+									{ id: 'new-account', onSubmit: this.handleSubmitForm.bind(this) },
+									_react2.default.createElement(
+										'div',
+										{ className: 'form-container' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'form-elements' },
+											_react2.default.createElement(
+												'label',
+												{ htmlFor: 'name' },
+												'Domain:'
+											),
+											_react2.default.createElement('input', {
+												type: 'text',
+												className: this.state.className,
+												name: 'domain',
+												onChange: this.handleInput
+	
+											}),
+											_react2.default.createElement(_SpanErrorContainer2.default, { errors: this.state.domainError }),
+											_react2.default.createElement(
+												'label',
+												{ htmlFor: 'userName' },
+												'User Name:'
+											),
+											_react2.default.createElement('input', {
+												type: 'text',
+												className: this.state.className,
+												name: 'userName',
+												onChange: this.handleInput
+											}),
+											_react2.default.createElement(_SpanErrorContainer2.default, {
+												errors: this.state.userNameError
+											}),
+											_react2.default.createElement(
+												'label',
+												{ htmlFor: 'password' },
+												'Password:'
+											),
+											_react2.default.createElement('input', {
+												type: 'password',
+												className: this.state.className,
+												name: 'password',
+												onChange: this.handleInput
+											}),
+											_react2.default.createElement(_SpanErrorContainer2.default, {
+												errors: this.state.passwordError
+											}),
+											_react2.default.createElement(
+												'label',
+												{ htmlFor: 'package' },
+												'Choose Package'
+											),
+											_react2.default.createElement(
+												'select',
+												{ name: 'package',
+													value: this.state.package
+												},
+												_react2.default.createElement(
+													'option',
+													null,
+													'Basic'
+												),
+												_react2.default.createElement(
+													'option',
+													null,
+													'Premium'
+												)
+											),
+											_react2.default.createElement(
+												'label',
+												{ htmlFor: 'email' },
+												'Contact Email:'
+											),
+											_react2.default.createElement('input', {
+												type: 'text',
+												className: this.state.className,
+												name: 'email',
+												onChange: this.handleInput
+	
+											}),
+											_react2.default.createElement(_SpanErrorContainer2.default, {
+												errors: this.state.emailError
+											}),
+											_react2.default.createElement('input', { type: 'submit', className: 'button-submit', value: 'Add Account' })
+										)
+									)
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+	
+		return NewAccount;
+	}(_react.Component);
+	
+	exports.default = NewAccount;
+
+/***/ }),
+/* 239 */
+/*!*************************************************************!*\
+  !*** ./src/components/FormComponent/SpanErrorContainer.jsx ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28105,16 +27409,16 @@
 	exports.default = SpanErrorContainer;
 
 /***/ }),
-/* 241 */
+/* 240 */
 /*!**************************!*\
   !*** ./~/axios/index.js ***!
   \**************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(/*! ./lib/axios */ 242);
+	module.exports = __webpack_require__(/*! ./lib/axios */ 241);
 
 /***/ }),
-/* 242 */
+/* 241 */
 /*!******************************!*\
   !*** ./~/axios/lib/axios.js ***!
   \******************************/
@@ -28122,10 +27426,10 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./utils */ 243);
-	var bind = __webpack_require__(/*! ./helpers/bind */ 244);
-	var Axios = __webpack_require__(/*! ./core/Axios */ 246);
-	var defaults = __webpack_require__(/*! ./defaults */ 247);
+	var utils = __webpack_require__(/*! ./utils */ 242);
+	var bind = __webpack_require__(/*! ./helpers/bind */ 243);
+	var Axios = __webpack_require__(/*! ./core/Axios */ 245);
+	var defaults = __webpack_require__(/*! ./defaults */ 246);
 	
 	/**
 	 * Create an instance of Axios
@@ -28158,15 +27462,15 @@
 	};
 	
 	// Expose Cancel & CancelToken
-	axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ 264);
-	axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ 265);
-	axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ 261);
+	axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ 263);
+	axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ 264);
+	axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ 260);
 	
 	// Expose all/spread
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(/*! ./helpers/spread */ 266);
+	axios.spread = __webpack_require__(/*! ./helpers/spread */ 265);
 	
 	module.exports = axios;
 	
@@ -28175,7 +27479,7 @@
 
 
 /***/ }),
-/* 243 */
+/* 242 */
 /*!******************************!*\
   !*** ./~/axios/lib/utils.js ***!
   \******************************/
@@ -28183,8 +27487,8 @@
 
 	'use strict';
 	
-	var bind = __webpack_require__(/*! ./helpers/bind */ 244);
-	var isBuffer = __webpack_require__(/*! is-buffer */ 245);
+	var bind = __webpack_require__(/*! ./helpers/bind */ 243);
+	var isBuffer = __webpack_require__(/*! is-buffer */ 244);
 	
 	/*global toString:true*/
 	
@@ -28487,7 +27791,7 @@
 
 
 /***/ }),
-/* 244 */
+/* 243 */
 /*!*************************************!*\
   !*** ./~/axios/lib/helpers/bind.js ***!
   \*************************************/
@@ -28507,7 +27811,7 @@
 
 
 /***/ }),
-/* 245 */
+/* 244 */
 /*!******************************!*\
   !*** ./~/is-buffer/index.js ***!
   \******************************/
@@ -28537,7 +27841,7 @@
 
 
 /***/ }),
-/* 246 */
+/* 245 */
 /*!***********************************!*\
   !*** ./~/axios/lib/core/Axios.js ***!
   \***********************************/
@@ -28545,12 +27849,12 @@
 
 	'use strict';
 	
-	var defaults = __webpack_require__(/*! ./../defaults */ 247);
-	var utils = __webpack_require__(/*! ./../utils */ 243);
-	var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ 258);
-	var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ 259);
-	var isAbsoluteURL = __webpack_require__(/*! ./../helpers/isAbsoluteURL */ 262);
-	var combineURLs = __webpack_require__(/*! ./../helpers/combineURLs */ 263);
+	var defaults = __webpack_require__(/*! ./../defaults */ 246);
+	var utils = __webpack_require__(/*! ./../utils */ 242);
+	var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ 257);
+	var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ 258);
+	var isAbsoluteURL = __webpack_require__(/*! ./../helpers/isAbsoluteURL */ 261);
+	var combineURLs = __webpack_require__(/*! ./../helpers/combineURLs */ 262);
 	
 	/**
 	 * Create a new instance of Axios
@@ -28632,7 +27936,7 @@
 
 
 /***/ }),
-/* 247 */
+/* 246 */
 /*!*********************************!*\
   !*** ./~/axios/lib/defaults.js ***!
   \*********************************/
@@ -28640,8 +27944,8 @@
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(/*! ./utils */ 243);
-	var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 248);
+	var utils = __webpack_require__(/*! ./utils */ 242);
+	var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 247);
 	
 	var DEFAULT_CONTENT_TYPE = {
 	  'Content-Type': 'application/x-www-form-urlencoded'
@@ -28657,10 +27961,10 @@
 	  var adapter;
 	  if (typeof XMLHttpRequest !== 'undefined') {
 	    // For browsers use XHR adapter
-	    adapter = __webpack_require__(/*! ./adapters/xhr */ 249);
+	    adapter = __webpack_require__(/*! ./adapters/xhr */ 248);
 	  } else if (typeof process !== 'undefined') {
 	    // For node use HTTP adapter
-	    adapter = __webpack_require__(/*! ./adapters/http */ 249);
+	    adapter = __webpack_require__(/*! ./adapters/http */ 248);
 	  }
 	  return adapter;
 	}
@@ -28734,7 +28038,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 4)))
 
 /***/ }),
-/* 248 */
+/* 247 */
 /*!****************************************************!*\
   !*** ./~/axios/lib/helpers/normalizeHeaderName.js ***!
   \****************************************************/
@@ -28742,7 +28046,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ../utils */ 243);
+	var utils = __webpack_require__(/*! ../utils */ 242);
 	
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -28755,7 +28059,7 @@
 
 
 /***/ }),
-/* 249 */
+/* 248 */
 /*!*************************************!*\
   !*** ./~/axios/lib/adapters/xhr.js ***!
   \*************************************/
@@ -28763,13 +28067,13 @@
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 243);
-	var settle = __webpack_require__(/*! ./../core/settle */ 250);
-	var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 253);
-	var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 254);
-	var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 255);
-	var createError = __webpack_require__(/*! ../core/createError */ 251);
-	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(/*! ./../helpers/btoa */ 256);
+	var utils = __webpack_require__(/*! ./../utils */ 242);
+	var settle = __webpack_require__(/*! ./../core/settle */ 249);
+	var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 252);
+	var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 253);
+	var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 254);
+	var createError = __webpack_require__(/*! ../core/createError */ 250);
+	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(/*! ./../helpers/btoa */ 255);
 	
 	module.exports = function xhrAdapter(config) {
 	  return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -28866,7 +28170,7 @@
 	    // This is only done if running in a standard browser environment.
 	    // Specifically not if we're in a web worker, or react-native.
 	    if (utils.isStandardBrowserEnv()) {
-	      var cookies = __webpack_require__(/*! ./../helpers/cookies */ 257);
+	      var cookies = __webpack_require__(/*! ./../helpers/cookies */ 256);
 	
 	      // Add xsrf header
 	      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -28945,7 +28249,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../process/browser.js */ 4)))
 
 /***/ }),
-/* 250 */
+/* 249 */
 /*!************************************!*\
   !*** ./~/axios/lib/core/settle.js ***!
   \************************************/
@@ -28953,7 +28257,7 @@
 
 	'use strict';
 	
-	var createError = __webpack_require__(/*! ./createError */ 251);
+	var createError = __webpack_require__(/*! ./createError */ 250);
 	
 	/**
 	 * Resolve or reject a Promise based on response status.
@@ -28980,7 +28284,7 @@
 
 
 /***/ }),
-/* 251 */
+/* 250 */
 /*!*****************************************!*\
   !*** ./~/axios/lib/core/createError.js ***!
   \*****************************************/
@@ -28988,7 +28292,7 @@
 
 	'use strict';
 	
-	var enhanceError = __webpack_require__(/*! ./enhanceError */ 252);
+	var enhanceError = __webpack_require__(/*! ./enhanceError */ 251);
 	
 	/**
 	 * Create an Error with the specified message, config, error code, request and response.
@@ -29007,7 +28311,7 @@
 
 
 /***/ }),
-/* 252 */
+/* 251 */
 /*!******************************************!*\
   !*** ./~/axios/lib/core/enhanceError.js ***!
   \******************************************/
@@ -29037,7 +28341,7 @@
 
 
 /***/ }),
-/* 253 */
+/* 252 */
 /*!*****************************************!*\
   !*** ./~/axios/lib/helpers/buildURL.js ***!
   \*****************************************/
@@ -29045,7 +28349,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 243);
+	var utils = __webpack_require__(/*! ./../utils */ 242);
 	
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -29114,7 +28418,7 @@
 
 
 /***/ }),
-/* 254 */
+/* 253 */
 /*!*********************************************!*\
   !*** ./~/axios/lib/helpers/parseHeaders.js ***!
   \*********************************************/
@@ -29122,7 +28426,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 243);
+	var utils = __webpack_require__(/*! ./../utils */ 242);
 	
 	/**
 	 * Parse headers into an object
@@ -29160,7 +28464,7 @@
 
 
 /***/ }),
-/* 255 */
+/* 254 */
 /*!************************************************!*\
   !*** ./~/axios/lib/helpers/isURLSameOrigin.js ***!
   \************************************************/
@@ -29168,7 +28472,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 243);
+	var utils = __webpack_require__(/*! ./../utils */ 242);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -29237,7 +28541,7 @@
 
 
 /***/ }),
-/* 256 */
+/* 255 */
 /*!*************************************!*\
   !*** ./~/axios/lib/helpers/btoa.js ***!
   \*************************************/
@@ -29282,7 +28586,7 @@
 
 
 /***/ }),
-/* 257 */
+/* 256 */
 /*!****************************************!*\
   !*** ./~/axios/lib/helpers/cookies.js ***!
   \****************************************/
@@ -29290,7 +28594,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 243);
+	var utils = __webpack_require__(/*! ./../utils */ 242);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -29344,7 +28648,7 @@
 
 
 /***/ }),
-/* 258 */
+/* 257 */
 /*!************************************************!*\
   !*** ./~/axios/lib/core/InterceptorManager.js ***!
   \************************************************/
@@ -29352,7 +28656,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 243);
+	var utils = __webpack_require__(/*! ./../utils */ 242);
 	
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -29405,7 +28709,7 @@
 
 
 /***/ }),
-/* 259 */
+/* 258 */
 /*!*********************************************!*\
   !*** ./~/axios/lib/core/dispatchRequest.js ***!
   \*********************************************/
@@ -29413,10 +28717,10 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 243);
-	var transformData = __webpack_require__(/*! ./transformData */ 260);
-	var isCancel = __webpack_require__(/*! ../cancel/isCancel */ 261);
-	var defaults = __webpack_require__(/*! ../defaults */ 247);
+	var utils = __webpack_require__(/*! ./../utils */ 242);
+	var transformData = __webpack_require__(/*! ./transformData */ 259);
+	var isCancel = __webpack_require__(/*! ../cancel/isCancel */ 260);
+	var defaults = __webpack_require__(/*! ../defaults */ 246);
 	
 	/**
 	 * Throws a `Cancel` if cancellation has been requested.
@@ -29493,7 +28797,7 @@
 
 
 /***/ }),
-/* 260 */
+/* 259 */
 /*!*******************************************!*\
   !*** ./~/axios/lib/core/transformData.js ***!
   \*******************************************/
@@ -29501,7 +28805,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 243);
+	var utils = __webpack_require__(/*! ./../utils */ 242);
 	
 	/**
 	 * Transform the data for a request or a response
@@ -29522,7 +28826,7 @@
 
 
 /***/ }),
-/* 261 */
+/* 260 */
 /*!****************************************!*\
   !*** ./~/axios/lib/cancel/isCancel.js ***!
   \****************************************/
@@ -29536,7 +28840,7 @@
 
 
 /***/ }),
-/* 262 */
+/* 261 */
 /*!**********************************************!*\
   !*** ./~/axios/lib/helpers/isAbsoluteURL.js ***!
   \**********************************************/
@@ -29559,7 +28863,7 @@
 
 
 /***/ }),
-/* 263 */
+/* 262 */
 /*!********************************************!*\
   !*** ./~/axios/lib/helpers/combineURLs.js ***!
   \********************************************/
@@ -29582,7 +28886,7 @@
 
 
 /***/ }),
-/* 264 */
+/* 263 */
 /*!**************************************!*\
   !*** ./~/axios/lib/cancel/Cancel.js ***!
   \**************************************/
@@ -29610,7 +28914,7 @@
 
 
 /***/ }),
-/* 265 */
+/* 264 */
 /*!*******************************************!*\
   !*** ./~/axios/lib/cancel/CancelToken.js ***!
   \*******************************************/
@@ -29618,7 +28922,7 @@
 
 	'use strict';
 	
-	var Cancel = __webpack_require__(/*! ./Cancel */ 264);
+	var Cancel = __webpack_require__(/*! ./Cancel */ 263);
 	
 	/**
 	 * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -29676,7 +28980,7 @@
 
 
 /***/ }),
-/* 266 */
+/* 265 */
 /*!***************************************!*\
   !*** ./~/axios/lib/helpers/spread.js ***!
   \***************************************/
