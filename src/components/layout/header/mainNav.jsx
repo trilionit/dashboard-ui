@@ -7,7 +7,7 @@ class MainNav extends Component{
 			<div>
 				<nav>
 					<div className="container">
-						<NavLeft/>
+						<NavLeft setActiveNav={this.props.setActiveNav} />
 						<NavRight/>
 					</div>
 				</nav>

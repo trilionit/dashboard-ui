@@ -16,9 +16,7 @@ class NewAccount extends Component{
 			domainError:'',
 			userNameError:'',
 			passwordError:'',
-			emailError:''
-				
-			
+			emailError:''	
 		}
 		this.handleInput=this.handleInput.bind(this);
 	}
