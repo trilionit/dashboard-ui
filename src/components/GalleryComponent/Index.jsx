@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import FormValidation from './FormValidation.jsx';
+import UploadForm from './UploadForm.jsx';
 
-class FormComponent extends Component{
+class GalleryComponent extends Component{
 	constructor(props){
 		super(props)
 		this.state={
@@ -12,11 +12,11 @@ class FormComponent extends Component{
 	}
 
 	render(){
-		return(<FormValidation setActiveClass={this.state.className} />);
+		return(<UploadForm setActiveClass={this.state.className} />);
 	}
 	
 }
-export default FormComponent;
+export default GalleryComponent;
 
 
 
