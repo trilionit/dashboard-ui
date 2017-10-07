@@ -11,6 +11,7 @@
   "author": "Fizal Sarif",
   "license": "MIT",
   "dependencies": {
+    "FileReader": "^0.10.2",
     "axios": "^0.16.2",
     "body-parser": "^1.18.0",
     "chart.js": "^2.6.0",
